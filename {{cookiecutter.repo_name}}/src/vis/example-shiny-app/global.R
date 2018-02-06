@@ -13,8 +13,4 @@ library(digest)
 library(zoo)
 
 # Define global variables, functions, etc. here
-approved_users <-
-  data.frame(
-    "user" = c("test"),
-    password = c(digest("test", algo = "md5"))
-  )
+

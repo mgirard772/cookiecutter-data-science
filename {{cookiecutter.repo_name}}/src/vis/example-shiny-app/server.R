@@ -22,6 +22,12 @@ shinyServer(function(input, output, session) {
   # when login button pressed, evaluate credentials, update status/message
   observeEvent(eventExpr = input$login,
     handlerExpr = {
+      #Get user list here (getUsers() will grab users from Vertica)
+      approved_users <-
+        data.frame(
+          "user" = c("test"),
+          password = c(digest("test", algo = "md5"))
+        )
       validate(
         need(input$user, "Please enter your username"),
         need(input$pw, "Please enter your password"),
