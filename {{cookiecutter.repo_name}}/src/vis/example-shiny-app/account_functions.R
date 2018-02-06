@@ -1,9 +1,6 @@
 library(digest)
 
-proj_root_dir <- Sys.getenv("PROJECT_ROOT")
-raw_data_dir <- paste0(proj_root_dir, "/data/raw/")
-data_dir <- paste0(proj_root_dir, "/data/")
-sql_dir <- paste0(proj_root_dir, "/src/data/sql/")
+sql_dir <- paste0(Sys.getenv("PROJECT_ROOT"), "/src/data/sql/")
 
 #Add user with username (user) and password (pw), prevent duplicate users
 #Password is stored securely as an MD5 hash
