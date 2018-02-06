@@ -24,11 +24,6 @@ shinyUI({
     )
   )
 
-  # Tabs ----
-  # Source tab ui files here
-  source("modules/tab1_ui.R", local = TRUE)
-  source("modules/tab2_ui.R", local = TRUE)
-
   # Body ----
   body <- dashboardBody(
     tags$head(
@@ -49,7 +44,10 @@ shinyUI({
         )
       )
     ),
-    tabItems(tab1, tab2)
+    tabItems(
+      tabItem("tab1", tab1UI("tab1")),
+      tabItem("tab2", tab2UI("tab2"))
+    )
   )
 
   # Dashboard Page ----

@@ -45,8 +45,7 @@ shinyServer(function(input, output, session) {
           sidebarUserPanel(
             span("Logged in as ", input$user),
             actionLink("logout", label = "Logout"))
-        }
-        )
+        })
       }else {
         login_attempt$status <- FALSE
         login_attempt$message <-
@@ -66,11 +65,8 @@ shinyServer(function(input, output, session) {
       updateTextInput(session, "user", value = "")
       updateTextInput(session, "pw", value = "")
     })
-
-
-  #### Tab Server Source ####
-  #Source tab-sepcific server logic here
-  source('modules/tab1_server.R', local = TRUE)
-  source('modules/tab2_server.R', local = TRUE)
+  
+  callModule(tab1Server, "tab1")
+  callModule(tab2Server, "tab2")
 
 })

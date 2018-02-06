@@ -14,3 +14,7 @@ library(zoo)
 
 # Define global variables, functions, etc. here
 
+# Load Modules-----------------------------------------------------------------
+for (module_file in list.files("modules", pattern = "\\.R$")) {
+  source(file.path("modules", module_file))
+}

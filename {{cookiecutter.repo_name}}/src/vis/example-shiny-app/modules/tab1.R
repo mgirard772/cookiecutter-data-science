@@ -1,19 +1,30 @@
 tab1UI <- function(id){
+  ns <- NS(id)
   tagList(
     conditionalPanel(
       "output.logged_in",
       #Tab contents goes here
       fluidRow(
-        column(
-          12,
-          h3("Congratulations, you've logged in successfully.
-            Content in this tab is now visible.")
-          )
+        box(
+          title = "Text Field Form",
+          width = 6,
+          textInput(ns("field1"), label = "Enter Some Text"),
+          actionButton(ns("button1"), label = "Submit")
+        ),
+        box(
+          title = "Form Output",
+          width = 6,
+          textOutput(ns("outfield1"))
         )
       )
+    )
   )
 }
 
 tab1Server <- function(input, output, session){
-  
+  observeEvent(input$button1, {
+    output$outfield1 <- renderText({
+      isolate(input$field1)
+    })
+  })
 }
