@@ -13,6 +13,7 @@ library(digest)
 library(zoo)
 
 # Define global variables, functions, etc. here
+#source("account_functions.R")
 
 # Load Modules-----------------------------------------------------------------
 for (module_file in list.files("modules", pattern = "\\.R$")) {
