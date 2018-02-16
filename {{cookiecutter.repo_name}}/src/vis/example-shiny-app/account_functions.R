@@ -47,7 +47,7 @@ create_credentials_table <- function(){
   query <- paste0(
     "CREATE TABLE ",
     Sys.getenv("credentials_location"),
-    "(username varchar(80), password varchar(80));"
+    "(user varchar(80), password varchar(80));"
   )
   dbSendUpdate(db, query)
   dbDisconnect(db)
