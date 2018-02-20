@@ -6,9 +6,9 @@ if [ $# -eq 0 ] || [ -z "$1" ]
   exit 1
 fi
 
-if [ $1 == 3838 ] || [ $1 == 80 ] || [ $1 == 443 ]
+if [ $1 < 51000 ] || [$1 > 52000]
   then
-    echo "Please supply a different port number"
+    echo "Please supply a port number in the range 51000-52000"
 fi
 
 container_name=$(basename $(git remote get-url origin) .git)
