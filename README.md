@@ -96,4 +96,14 @@ A:
 2. There should be a data folder in there as well as ui.R, server.R, and global.R.
 3. The data should live in the same folder as the app shiny treats it's enclosing folder as it's working directory.
 
+Q: How do I deploy my Shiny App?
+
+A: Please visit [here](https://advana.atlassian.net/wiki/spaces/AAP/pages/353271925/Shiny+app+deployment+with+Docker) for details.
+
+Q: What are the default credentials for the example Shiny App?
+
+A: The default credentials are:
+    Username: test
+    Password: test
+
 <hr>
