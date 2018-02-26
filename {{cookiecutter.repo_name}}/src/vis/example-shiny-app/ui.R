@@ -41,7 +41,6 @@ shinyUI({
           textInput("user", label = "Username"),
           tagAppendAttributes(passwordInput("pw", label = "Password"),
             `data-proxy-click` = "login"),
-          passwordInput("pw", label = "Password"),
           actionButton("login", label = "Log In",
             align = "center", width = "85px"),
           h4(textOutput("login_info"), align = "center")
