@@ -36,8 +36,11 @@ shinyUI({
       condition = "!output.logged_in",
       column(6,
         offset = 3,
-        wellPanel(textInput("user", label = "Username"),
-          passwordInput("pw", label = "Password"),
+        wellPanel(
+          tags$head(tags$script(HTML(jscode))),
+          textInput("user", label = "Username"),
+          tagAppendAttributes(passwordInput("pw", label = "Password"),
+            `data-proxy-click` = "login"),
           actionButton("login", label = "Log In",
             align = "center", width = "85px"),
           h4(textOutput("login_info"), align = "center")

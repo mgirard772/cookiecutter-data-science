@@ -19,3 +19,21 @@ library(zoo)
 for (module_file in list.files("modules", pattern = "\\.R$")) {
   source(file.path("modules", module_file))
 }
+
+jscode <- '
+$(function() {
+var $els = $("[data-proxy-click]");
+$.each(
+$els,
+function(idx, el) {
+var $el = $(el);
+var $proxy = $("#" + $el.data("proxyClick"));
+$el.keydown(function (e) {
+if (e.keyCode == 13) {
+$proxy.click();
+}
+});
+}
+);
+});
+'

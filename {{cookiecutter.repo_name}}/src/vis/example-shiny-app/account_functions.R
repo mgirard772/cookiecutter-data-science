@@ -42,4 +42,20 @@ removeUser <- function(user){
   dbDisconnect(db)
 }
 
+updatePassword <- function(user, pw){
+  removeUser(user)
+  addUser(user, pw)
+}
+
+create_credentials_table <- function(){
+  source(paste0(sql_dir, "vertica_connect.R"))
+  query <- paste0(
+    "CREATE TABLE ",
+    Sys.getenv("credentials_location"),
+    "(username varchar(80), password varchar(80));"
+  )
+  dbSendUpdate(db, query)
+  dbDisconnect(db)
+}
+
 

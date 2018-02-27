@@ -26,7 +26,7 @@ shinyServer(function(input, output, session) {
       #Get user list here (getUsers() will grab users from Vertica)
       approved_users <-
         data.frame(
-          "user" = c("test"),
+          username = c("test"),
           password = c(digest("test", algo = "md5"))
         )
       #approved_users <- getUsers()
@@ -39,7 +39,7 @@ shinyServer(function(input, output, session) {
 
       is_approved <-
         approved_users %>%
-        filter(user == input$user,
+        filter(username == input$user,
           password == digest(input$pw, algo = "md5"))
 
       if (nrow(is_approved) > 0) {
