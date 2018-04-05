@@ -98,7 +98,7 @@ A:
 
 Q: How do I deploy my Shiny App?  
   
-A: Please visit [here](https://advana.atlassian.net/wiki/spaces/AAP/pages/353271925/Shiny+app+deployment+with+Docker) for details.  
+A: Please visit [here](https://massmutual.atlassian.net/wiki/spaces/AAP/pages/427072326/Shiny+app+deployment+with+Docker) for details.  
 
 Q: What are the default credentials for the example Shiny App?  
   
