@@ -108,5 +108,5 @@ A: The default credentials are:
   
 Q: How do I sync my project files with S3?
   
-A: First, you want to update the script `setup_s3.sh` to match your environment. Then, you want to run `make sync_data_from_s3` to pull all existing data from S3. To push changes up to S3, run `make sync_data_to_s3`. You can perform a push and pull by running `make sync_s3`. Because the sync command's change management is not great, it's recommended that you confer with your teammates before pulling or pushing changes or give files unique or timestamped names.
+A: First, you want to update the script `setup_s3.sh` to match your environment and make sure your project folder is setup as a git repository. Then, you want to run `make sync_data_from_s3` to pull all existing data from S3. To push changes up to S3, run `make sync_data_to_s3`. You can perform a push and pull by running `make sync_s3`. Because the sync command's change management is not great, it's recommended that you confer with your teammates before pulling or pushing changes or give files unique or timestamped names.
 <hr>
