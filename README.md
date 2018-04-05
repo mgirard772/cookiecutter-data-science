@@ -96,14 +96,17 @@ A:
 2. There should be a data folder in there as well as ui.R, server.R, and global.R.
 3. The data should live in the same folder as the app shiny treats it's enclosing folder as it's working directory.
 
-Q: How do I deploy my Shiny App?
+Q: How do I deploy my Shiny App?  
+  
+A: Please visit [here](https://advana.atlassian.net/wiki/spaces/AAP/pages/353271925/Shiny+app+deployment+with+Docker) for details.  
 
-A: Please visit [here](https://advana.atlassian.net/wiki/spaces/AAP/pages/353271925/Shiny+app+deployment+with+Docker) for details.
-
-Q: What are the default credentials for the example Shiny App?
-
-A: The default credentials are:
-    Username: test
-    Password: test
-
+Q: What are the default credentials for the example Shiny App?  
+  
+A: The default credentials are:  
+    Username: test  
+    Password: test  
+  
+Q: How do I sync my project files with S3?
+  
+A: First, you want to update the script `setup_s3.sh` to match your environment. Then, you want to run `make sync_data_from_s3` to pull all existing data from S3. To push changes up to S3 run `make sync_data_to_s3`. You can perform a push and pull by running `make sync_s3`. Because the sync command's change management is not great, it's recommended that you confer with your teammates before pulling or pushing changes or give files unique or timestamped names.
 <hr>

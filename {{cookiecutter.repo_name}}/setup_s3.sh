@@ -9,8 +9,8 @@ cat << EOM > vertica.ini
 host=$vertica_host
 port=$vertica_port
 database=advana
-user=$premium_finance_batch
-password=$premium_finance_pass
+user=$vert_user
+password=$vert_pw
 EOM
 
 #Get aws s3 credentials from Vertica

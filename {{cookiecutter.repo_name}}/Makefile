@@ -85,15 +85,13 @@ sync_data_to_s3:
 	aws s3 sync data/ s3://$(BUCKET)/data/
 	aws s3 sync reports/ s3://$(BUCKET)/reports/
 	aws s3 sync references/ s3://$(BUCKET)/references/
-	aws s3 sync docs/ s3://$(BUCKET)/docs/
 
 sync_data_from_s3:
 	. setup_s3.sh
 	aws s3 sync s3://$(BUCKET)/models/ models/
 	aws s3 sync s3://$(BUCKET)/data/ data/ 
 	aws s3 sync s3://$(BUCKET)/reports/ reports/ 
-	aws s3 sync s3://$(BUCKET)/references/ references/ 
-	aws s3 sync s3://$(BUCKET)/docs/ docs/
+	aws s3 sync s3://$(BUCKET)/references/ references/
 	
 sync_s3: sync_data_to_s3 sync_data_from_s3
 
