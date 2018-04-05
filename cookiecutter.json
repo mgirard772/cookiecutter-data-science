@@ -5,6 +5,7 @@
     "description": "A short description of the project.",
     "open_source_license": ["MIT", "BSD", "Not open source"],
     "aws_profile": "default",
+    "s3_bucket": "mm-cx-de-dataplatform-qa/science/core/$$(basename $$(git remote get-url origin) .git)",
     "include_r_boilerplate": ["true", "false"],
     "include_python_boilerplate": ["true", "false"]
 }
