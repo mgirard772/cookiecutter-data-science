@@ -77,3 +77,26 @@ target/
 
 # OSX Junk
 .DS_Store
+.Rproj.user
+*.rda
+*.rds
+*.csv
+*.xls
+*.xlsx
+*.pptx
+*.doc
+/data
+/models
+*.Rproj
+/references
+/reports
+/docs
+Renviron.sh
+.Rhistory
+*.html
+*.pdf
+.RData
+.encrypt_key
+.environment
+.environment_test
+

@@ -74,10 +74,6 @@ lint:
 	# for R:
 	# Rscript -e 'lintr::lint_package()'
 
-## Delete all compiled Python files
-clean:
-	find . -name "*.pyc" -exec rm {} \;
-
 #Targets to sync data to S3
 sync_data_to_s3:
 	aws s3 sync models/ s3://$(BUCKET)/models/
@@ -92,6 +88,19 @@ sync_data_from_s3:
 	aws s3 sync s3://$(BUCKET)/references/ references/
 	
 sync_s3: sync_data_to_s3 sync_data_from_s3
+
+#Targets to encrypt environment variables
+encrypt_env:
+	openssl des -in $(file) -out $(file)_encrypted -pass pass:$(pass)
+
+decrypt_env:
+	openssl des -d -in $(file)_encrypted -out $(file) -pass pass:$(pass)
+	
+test_decrypt_env:
+	openssl des -d -in $(file)_encrypted -out $(file)_test -pass pass:$(pass)
+	
+gen_encrypt_key:
+	echo "encrypt_key=$$(openssl rand -base64 32)" > .encrypt_key
 
 #################################################################################
 # Self Documenting Commands                                                     #

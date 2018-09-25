@@ -8,3 +8,7 @@ docs/site/
 tests/__pycache__/*
 .Rproj.user
 *.Rproj
+.RData
+.RHistory
+environment
+encrypt_key
