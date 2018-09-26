@@ -1,7 +1,7 @@
-project_root <- Sys.getenv("project_root")
-data_dir <- paste0(project_root, "/data/")
-sql_dir <- paste0(project_root, "/src/data/sql/")
-exploratory_dir <- paste0(project_root, "/src/exploratory/")
+project_root <- getwd()
+data_dir <- file.path(project_root, "data")
+sql_dir <- file.path(project_root, "src", "data", "sql")
+exploratory_dir <- file.path(project_root, "src", "exploratory")
 
 mm_getenv <- function(instance = Sys.getenv("instance")){
   #TODO Check for valid instance argument
